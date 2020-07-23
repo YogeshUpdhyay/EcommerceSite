@@ -5,10 +5,8 @@ def index(request):
     slidercontent = Slider.objects.all()
     slidernumber = range(2,len(slidercontent)+1)
     offers = Offers.objects.all()
-    print(len(offers))
     featured = Featured.objects.all()
-    print(len(featured))
-    return render(request,'index.html',{'slidercontent' : slidercontent, 'slidernumber' : slidernumber, 'offers' : offers, 'featured' : featured})
+    return render(request,'index.html',{'slidercontent' : slidercontent, 'slidernumber' : slidernumber, 'offers' : offers[0], 'featured' : featured[0]})
 
 def product(request):
     return render(request,'product.html')
