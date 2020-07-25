@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Slider,Featured,Offers
 # Create your views here.
+
 def index(request):
     slidercontent = Slider.objects.all()
     slidernumber = range(2,len(slidercontent)+1)
