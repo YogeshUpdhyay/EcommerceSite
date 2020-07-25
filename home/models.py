@@ -15,3 +15,8 @@ class Featured(models.Model):
     img = models.ImageField(upload_to = 'pics')
     desc  = models.TextField()
     title = models.CharField(max_length = 50)
+
+class Products(models.Model):
+    img = models.ImageField(upload_to = 'pics')
+    name = models.CharField(max_length = 50)
+    price = models.IntegerField(default=0)
