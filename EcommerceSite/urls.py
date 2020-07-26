@@ -21,7 +21,7 @@ from django.conf import settings
 
 urlpatterns = [
     path('', include('home.urls')),
-    path(r'^product.html/$',include('home.urls')),
+    path('product/<productname>/',include('home.urls')),
     path('cart.html', include('home.urls')),
     path('checkout.html', include('home.urls')),
     path('contact.html', include('home.urls')),

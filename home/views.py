@@ -5,18 +5,18 @@ from .models import Slider,Featured,Offers,Products
 def index(request):
     slidercontent = Slider.objects.all()
     slidernumber = range(2,len(slidercontent)+1)
-    offers = Offers.objects.all()
-    featured = Featured.objects.all()
+    offers = Offers.objects.get()
+    featured = Featured.objects.get()
     products = Products.objects.all()
     content = {
         'slidercontent' : slidercontent, 
         'slidernumber' : slidernumber, 
-        'offers' : offers[0], 
-        'featured' : featured[0],
+        'offers' : offers, 
+        'featured' : featured,
         'products' : products}
     return render(request,'index.html',content)
 
-def product(request):
+def product(request,productname):
     return render(request,'product.html')
 
 def cart(request):
