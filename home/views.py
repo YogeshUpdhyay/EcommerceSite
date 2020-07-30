@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Slider,Featured,Offers,AllProducts
+from .models import Slider,Featured,Offers
 # Create your views here.
 
 def index(request):
@@ -7,23 +7,14 @@ def index(request):
     slidernumber = range(2,len(slidercontent)+1)
     offers = Offers.objects.get()
     featured = Featured.objects.get()
-    products = AllProducts.objects.all()
     content = {
         'slidercontent' : slidercontent, 
         'slidernumber' : slidernumber, 
         'offers' : offers, 
-        'featured' : featured,
-        'products' : products}
-    return render(request,'index.html',content)
-
-def product(request,productname):
-    product = AllProducts.objects.get(name = productname)
-    relproducts = AllProducts.objects.all()[:4]
-    content = {
-        'product' : product,
-        'relproducts' : relproducts
+        'featured' : featured
+        #'products' : products
     }
-    return render(request,'product.html',content)
+    return render(request,'index.html',content)
 
 def cart(request):
     return render(request,'cart.html')

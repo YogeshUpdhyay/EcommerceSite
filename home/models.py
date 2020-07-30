@@ -16,11 +16,3 @@ class Featured(models.Model):
     desc  = models.TextField()
     title = models.CharField(max_length = 50)
 
-class AllProducts(models.Model):
-    img = models.ImageField(upload_to = 'pics')
-    name = models.CharField(max_length = 50)
-    price = models.IntegerField(default=0)
-    description  = models.TextField(default="description")
-    disprice = models.IntegerField(default=0)
-    batch = models.DateTimeField(default = '2019-12-25 12:30')
-    sale = models.BooleanField(default=False)
