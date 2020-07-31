@@ -174,8 +174,8 @@
 				<div class="col-lg-6">
 					<div class="details_content">
 						<div class="details_name">{{product.name}}</div>
-						<div class="details_discount">&#8377;{{product.disprice}}</div>
-						<div class="details_price">&#8377;{{product.price}}</div>
+						<div class="details_discount">&#8377;{{product.price}}</div>
+						<div class="details_price">&#8377;{{product.disprice}}</div>
 
 						<!-- In Stock -->
 						<div class="in_stock_container">
@@ -243,12 +243,12 @@
 						<div class="product">
 							<div class="product_image"><img src={{i.img.url}} alt=""></div>
 							{% if i.sale %}
-							<div class="product_extra product_new">Sale</div>
+								<div class="product_extra product_new">Sale</div>
 							{% endif %}
 							<div class="product_content">
 								<div class="product_title"><a href="product/{{i.name}}">{{i.name}}</a></div>
-								<div class="details_discount">&#8377;{{i.disprice}}</div>
-								<div class="product_price">&#8377;{{i.price}}</div>
+								<div class="details_discount">&#8377;{{i.price}}</div>
+								<div class="product_price">&#8377;{{i.disprice}}</div>
 							</div>
 						</div>
 						{% endfor %}

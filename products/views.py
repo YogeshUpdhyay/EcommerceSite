@@ -4,4 +4,9 @@ from .models import Product
 
 def product(request,productname):
     product = Product.objects.get(name = productname)
-    return render(request,'product.html',{'product' : product})
+    relproducts = Product.objects.all()[:4]
+    content = {
+        'product' : product,
+        'relproducts' : relproducts
+        }
+    return render(request,'product.html',content)

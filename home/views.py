@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import Slider,Featured,Offers
+from products.models import Product
 # Create your views here.
 
 def index(request):
@@ -7,12 +8,13 @@ def index(request):
     slidernumber = range(2,len(slidercontent)+1)
     offers = Offers.objects.get()
     featured = Featured.objects.get()
+    products = Product.objects.all()
     content = {
         'slidercontent' : slidercontent, 
         'slidernumber' : slidernumber, 
         'offers' : offers, 
-        'featured' : featured
-        #'products' : products
+        'featured' : featured,
+        'products' : products
     }
     return render(request,'index.html',content)
 
