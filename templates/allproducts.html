@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Creencia</title>
+<title>Product</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="ECommerce project">
@@ -12,8 +12,8 @@
 <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/animate.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'styles/main_styles.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'styles/responsive.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/product.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/product_responsive.css' %}">
 </head>
 <body>
 
@@ -27,21 +27,21 @@
 				<div class="row">
 					<div class="col">
 						<div class="header_content d-flex flex-row align-items-center justify-content-start">
-							<div class="logo"><a href="">Creencia.</a></div>
+							<div class="logo"><a href="#">Creencia.</a></div>
 							<nav class="main_nav">
 								<ul>
 									<li class="hassubs active">
-										<a href="">Creencia</a>
+										<a href="index.html">Home</a>
 										<ul>
-											<li><a href="allproducts">Product</a></li>
-											<li><a href="cart">Cart</a></li>
-											<li><a href="checkout">Checkout</a></li>
-											<li><a href="contact">Contact</a></li>
+											<li><a href="product.html">Product</a></li>
+											<li><a href="cart.html">Cart</a></li>
+											<li><a href="checkout.html">Check out</a></li>
+											<li><a href="contact.html">Contact</a></li>
 										</ul>
 									</li>
-									<li><a href="allproducts">Products</a></li>
+									<li><a href="#">Products</a></li>
+									<li><a href="#">Offers</a></li>
 									<li><a href="contact.html">Contact</a></li>
-									<li><a href="login-signup">Sign In</a></li>
 								</ul>
 							</nav>
 							<div class="header_extra ml-auto">
@@ -128,13 +128,15 @@
 					<li class="page_menu_item has-children menu_mm">
 						<a href="index.html">Home<i class="fa fa-angle-down"></i></a>
 						<ul class="page_menu_selection menu_mm">
-							<li class="page_menu_item menu_mm"><a href="allproducts">Product<i class="fa fa-angle-down"></i></a></li>
-							<li class="page_menu_item menu_mm"><a href="cart">Cart<i class="fa fa-angle-down"></i></a></li>
-							<li class="page_menu_item menu_mm"><a href="contact">Contact<i class="fa fa-angle-down"></i></a></li>
+							<li class="page_menu_item menu_mm"><a href="product.html">Product<i class="fa fa-angle-down"></i></a></li>
+							<li class="page_menu_item menu_mm"><a href="cart.html">Cart<i class="fa fa-angle-down"></i></a></li>
+							<li class="page_menu_item menu_mm"><a href="checkout.html">Checkout<i class="fa fa-angle-down"></i></a></li>
+							<li class="page_menu_item menu_mm"><a href="contact.html">Contact<i class="fa fa-angle-down"></i></a></li>
 						</ul>
 					</li>
-					<li class="page_menu_item menu_mm"><a href="allproducts">Products<i class="fa fa-angle-down"></i></a></li>
-					<li class="page_menu_item menu_mm"><a href="contact">Contact<i class="fa fa-angle-down"></i></a></li>
+					<li class="page_menu_item menu_mm"><a href="product.html">Products<i class="fa fa-angle-down"></i></a></li>
+					<li class="page_menu_item menu_mm"><a href="#">Offers<i class="fa fa-angle-down"></i></a></li>
+					<li class="page_menu_item menu_mm"><a href="contact.html">Contact<i class="fa fa-angle-down"></i></a></li>
 				</ul>
 			</div>
 		</div>
@@ -148,163 +150,37 @@
 			</ul>
 		</div>
 	</div>
-	
-	<!-- Home -->
-
-	<div class="home">
-		<div class="home_slider_container">
-			
-			<!-- Home Slider -->
-			<div class="owl-carousel owl-theme home_slider">
-				
-				<!-- Slider Item -->
-				{% for slider in slidercontent %}
-				<div class="owl-item home_slider_item">
-					<div class="home_slider_background" style="background-image:url({{slider.img.url}})"></div>
-					<div class="home_slider_content_container">
-						<div class="container">
-							<div class="row">
-								<div class="col">
-									<div class="home_slider_content"  data-animation-in="fadeIn" data-animation-out="animate-out fadeOut">
-										<div class="home_slider_title">{{slider.name}}.</div>
-										<div class="home_slider_subtitle">{{slider.desc}}.</div>
-										<div class="button button_light home_button"><a href="#">Shop Now</a></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				{% endfor %}
-
-			</div>
-
-			<!-- Home Slider Dots -->
-			
-			<div class="home_slider_dots_container">
-				<div class="container">
-					<div class="row">
-						<div class="col">
-							<div class="home_slider_dots">
-								<ul id="home_slider_custom_dots" class="home_slider_custom_dots">
-									<li class="home_slider_custom_dot active">01.</li>
-									{% for i in slidernumber %}
-									<li class="home_slider_custom_dot">0{{i}}.</li>
-									{% endfor %}
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>	
-			</div>
-
-		</div>
-	</div>
-
-	<!-- Ads -->
-
-	<div class="avds">
-		<div class="avds_container d-flex flex-lg-row flex-column align-items-start justify-content-between">
-			<div class="avds_small">
-				<div class="avds_background" style="background-image:url({{featured.img.url}})"></div>
-				<div class="avds_small_inner">
-					<div class="avds_discount_container">
-						<img src={% static 'images/discount.png'%} alt="">
-						<div>
-							<div class="avds_discount">
-								<div>{{offers.percent}}<span>%</span></div>
-								<div>Discount</div>
-							</div>
-						</div>
-					</div>
-					<div class="avds_small_content">
-						<div class="avds_title">{{offers.title}}</div>
-						<div class="avds_link"><a href="product.html">See More</a></div>
-					</div>
-				</div>
-			</div>
-			<div class="avds_large">
-				<div class="avds_background" style="background-image:url({{featured.img.url}})"></div>
-				<div class="avds_large_container">
-					<div class="avds_large_content">
-						<div class="avds_title">{{featured.title}}</div>
-						<div class="avds_text">{{featured.desc}}.</div>
-						<div class="avds_link avds_link_large"><a href="categories.html">See More</a></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- Products -->
 
 	<div class="products">
 		<div class="container">
+			<div class="row">
+				<div class="col text-center">
+					<div class="products_title">All Products</div>
+				</div>
+			</div>
 			<div class="row">
 				<div class="col">
 					
 					<div class="product_grid">
 
+						{% for i in products %}
 						<!-- Product -->
-						{% for product in products %}
 						<div class="product">
-							<div class="product_image"><img src={{product.img.url}} alt=""></div>
-							<div class="product_extra product_new"><a href="product/{{product.name}}/">New</a></div>
+							<div class="product_image"><img src={{i.img.url}} alt=""></div>
+							{% if i.sale %}
+								<div class="product_extra product_new"><a>Sale</a></div>
+							{% endif %}
 							<div class="product_content">
-								<div class="product_title"><a href="product/{{product.name}}/">{{product.name}}</a></div>
-								<div class="product_price">&#8377;{{product.price}}</div>
+								<div class="product_title"><a href="product/{{i.name}}">{{i.name}}</a></div>
+								<div class="details_discount">&#8377;{{i.price}}</div>
+								<div class="product_price">&#8377;{{i.disprice}}</div>
 							</div>
 						</div>
 						{% endfor %}
 
-						
-					</div>
-						
-				</div>
-			</div>
-		</div>
-	</div>
 
-	
-	<!-- Icon Boxes -->
-
-	<div class="icon_boxes">
-		<div class="container">
-			<div class="row icon_box_row">
-				
-				<!-- Icon Box -->
-				<div class="col-lg-4 icon_box_col">
-					<div class="icon_box">
-						<div class="icon_box_image"><img src="{% static 'images/icon_1.svg' %}" alt=""></div>
-						<div class="icon_box_title">Free Shipping Worldwide</div>
-						<div class="icon_box_text">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie.</p>
-						</div>
 					</div>
 				</div>
-
-				<!-- Icon Box -->
-				<div class="col-lg-4 icon_box_col">
-					<div class="icon_box">
-						<div class="icon_box_image"><img src="{% static 'images/icon_2.svg' %}" alt=""></div>
-						<div class="icon_box_title">Free Returns</div>
-						<div class="icon_box_text">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie.</p>
-						</div>
-					</div>
-				</div>
-
-				<!-- Icon Box -->
-				<div class="col-lg-4 icon_box_col">
-					<div class="icon_box">
-						<div class="icon_box_image"><img src="{% static 'images/icon_3.svg' %}" alt=""></div>
-						<div class="icon_box_title">24h Fast Support</div>
-						<div class="icon_box_text">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie.</p>
-						</div>
-					</div>
-				</div>
-
 			</div>
 		</div>
 	</div>
@@ -317,7 +193,7 @@
 			<div class="row">
 				<div class="col">
 					<div class="footer_content d-flex flex-lg-row flex-column align-items-center justify-content-lg-start justify-content-center">
-						<div class="footer_logo"><a href="#">Creencia.</a></div>
+						<div class="footer_logo"><a href="">Creencia.</a></div>
 						<div class="footer_social ml-lg-auto">
 							<ul>
 								<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>

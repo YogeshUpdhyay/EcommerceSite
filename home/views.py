@@ -18,6 +18,12 @@ def index(request):
     }
     return render(request,'index.html',content)
 
+def allproducts(request):
+    products = Product.objects.all()
+    content = {
+        'products' : products
+    }
+    return render (request,'allproducts.html',content)
 def cart(request):
     return render(request,'cart.html')
 
