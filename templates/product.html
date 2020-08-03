@@ -247,7 +247,7 @@
 								<div class="product_extra product_new">Sale</div>
 							{% endif %}
 							<div class="product_content">
-								<div class="product_title"><a href="product/{{i.name}}">{{i.name}}</a></div>
+								<div class="product_title"><a href={% url 'product'  %}">{{i.name}}</a></div>
 								<div class="details_discount">&#8377;{{i.price}}</div>
 								<div class="product_price">&#8377;{{i.disprice}}</div>
 							</div>

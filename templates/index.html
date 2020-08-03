@@ -249,7 +249,7 @@
 						{% for product in products %}
 						<div class="product">
 							<div class="product_image"><img src={{product.img.url}} alt=""></div>
-							<div class="product_extra product_new"><a href="product/{{product.name}}/">New</a></div>
+							<div class="product_extra product_new"><a href={% url 'product' productname = {{product.name}} %}>New</a></div>
 							<div class="product_content">
 								<div class="product_title"><a href="product/{{product.name}}/">{{product.name}}</a></div>
 								<div class="product_price">&#8377;{{product.price}}</div>

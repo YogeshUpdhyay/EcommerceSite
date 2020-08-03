@@ -10,7 +10,6 @@ def product(request,productname):
         'relproducts' : relproducts
     }
     print(request.path_info)
-    try:
-        return redirect(request,'product.html',content)
-    except Exception as e:
-        return render(request,'product.html',content)
+    
+    print('rendering')
+    return render(request,'product.html',content)
