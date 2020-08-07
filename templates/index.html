@@ -33,14 +33,14 @@
 									<li class="hassubs active">
 										<a href="">Creencia</a>
 										<ul>
-											<li><a href="allproducts">Product</a></li>
-											<li><a href="cart">Cart</a></li>
-											<li><a href="checkout">Checkout</a></li>
-											<li><a href="contact">Contact</a></li>
+											<li><a href={% url allproducts %}>Product</a></li>
+											<li><a href={% url cart %}>Cart</a></li>
+											<li><a href={% url checkout %}>Checkout</a></li>
+											<li><a href={% url contact %}>Contact</a></li>
 										</ul>
 									</li>
-									<li><a href="allproducts">Products</a></li>
-									<li><a href="contact.html">Contact</a></li>
+									<li><a href={% url allproducts %}>Products</a></li>
+									<li><a href={% url contact %}>Contact</a></li>
 									<li><a href="login-signup">Sign In</a></li>
 								</ul>
 							</nav>
@@ -126,15 +126,15 @@
 				</div>
 				<ul class="page_menu_nav menu_mm">
 					<li class="page_menu_item has-children menu_mm">
-						<a href="index.html">Home<i class="fa fa-angle-down"></i></a>
+						<a href={% url home %}>Home<i class="fa fa-angle-down"></i></a>
 						<ul class="page_menu_selection menu_mm">
-							<li class="page_menu_item menu_mm"><a href="allproducts">Product<i class="fa fa-angle-down"></i></a></li>
-							<li class="page_menu_item menu_mm"><a href="cart">Cart<i class="fa fa-angle-down"></i></a></li>
-							<li class="page_menu_item menu_mm"><a href="contact">Contact<i class="fa fa-angle-down"></i></a></li>
+							<li class="page_menu_item menu_mm"><a href={% url allproducts %}>Product<i class="fa fa-angle-down"></i></a></li>
+							<li class="page_menu_item menu_mm"><a href={% url cart %}>Cart<i class="fa fa-angle-down"></i></a></li>
+							<li class="page_menu_item menu_mm"><a href={% url contact %}>Contact<i class="fa fa-angle-down"></i></a></li>
 						</ul>
 					</li>
-					<li class="page_menu_item menu_mm"><a href="allproducts">Products<i class="fa fa-angle-down"></i></a></li>
-					<li class="page_menu_item menu_mm"><a href="contact">Contact<i class="fa fa-angle-down"></i></a></li>
+					<li class="page_menu_item menu_mm"><a href={% url allproducts %}>Products<i class="fa fa-angle-down"></i></a></li>
+					<li class="page_menu_item menu_mm"><a href={% url contact %}>Contact<i class="fa fa-angle-down"></i></a></li>
 				</ul>
 			</div>
 		</div>
@@ -249,9 +249,9 @@
 						{% for product in products %}
 						<div class="product">
 							<div class="product_image"><img src={{product.img.url}} alt=""></div>
-							<div class="product_extra product_new"><a href={% url 'product' productname = {{product.name}} %}>New</a></div>
+							<div class="product_extra product_new"><a href={% url 'product' product.name %}>New</a></div>
 							<div class="product_content">
-								<div class="product_title"><a href="product/{{product.name}}/">{{product.name}}</a></div>
+								<div class="product_title"><a href={% url 'product' product.name %}>{{product.name}}</a></div>
 								<div class="product_price">&#8377;{{product.price}}</div>
 							</div>
 						</div>

@@ -9,7 +9,4 @@ def product(request,productname):
         'product' : product,
         'relproducts' : relproducts
     }
-    print(request.path_info)
-    
-    print('rendering')
     return render(request,'product.html',content)

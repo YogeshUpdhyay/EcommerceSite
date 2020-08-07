@@ -160,9 +160,9 @@
 				<!-- Product Image -->
 				<div class="col-lg-6">
 					<div class="details_image">
-						<div class="details_image_large"><img src={{product.img.url}} alt=""><div class="product_extra product_new">New</div></div>
+						<div class="details_image_large"><img src={{product.img.url}} alt=""></div>
 						<div class="details_image_thumbnails d-flex flex-row align-items-start justify-content-between">
-							<div class="details_image_thumbnail active" data-image="{% static 'images/details_1.jpg' %}"><img src="{% static 'images/details_1.jpg' %}" alt=""></div>
+							<div class="details_image_thumbnail active" data-image={{product.img.url}}><img src={{product.img.url}} alt=""></div>
 							<div class="details_image_thumbnail" data-image={{product.img.url}}><img src={{product.img.url}} alt=""></div>
 							<div class="details_image_thumbnail" data-image={{product.img.url}}><img src={{product.img.url}} alt=""></div>
 							<div class="details_image_thumbnail" data-image={{product.img.url}}><img src={{product.img.url}} alt=""></div>
@@ -247,7 +247,7 @@
 								<div class="product_extra product_new">Sale</div>
 							{% endif %}
 							<div class="product_content">
-								<div class="product_title"><a href={% url 'product'  %}">{{i.name}}</a></div>
+								<div class="product_title"><a href={% url 'product' i.name %}>{{i.name}}</a></div>
 								<div class="details_discount">&#8377;{{i.price}}</div>
 								<div class="product_price">&#8377;{{i.disprice}}</div>
 							</div>

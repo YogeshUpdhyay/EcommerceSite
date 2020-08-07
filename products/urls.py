@@ -2,5 +2,5 @@ from django.contrib import admin
 from django.urls import path
 from . import views
 urlpatterns = [
-    path('product/<productname>/', views.product,name = 'product'),
+    path('product/<str:productname>/', views.product,name = 'product'),
 ]
