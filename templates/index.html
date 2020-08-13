@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Creencia</title>
+<title>Ecommerce-Site</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="ECommerce project">
@@ -27,20 +27,20 @@
 				<div class="row">
 					<div class="col">
 						<div class="header_content d-flex flex-row align-items-center justify-content-start">
-							<div class="logo"><a href="">Creencia.</a></div>
+							<div class="logo"><a href="">Ecommerce-Site.</a></div>
 							<nav class="main_nav">
 								<ul>
 									<li class="hassubs active">
-										<a href="">Creencia</a>
+										<a href="">Ecommerce-Site</a>
 										<ul>
-											<li><a href={% url allproducts %}>Product</a></li>
-											<li><a href={% url cart %}>Cart</a></li>
-											<li><a href={% url checkout %}>Checkout</a></li>
-											<li><a href={% url contact %}>Contact</a></li>
+											<li><a href={% url 'allproducts' %}>Product</a></li>
+											<li><a href={% url 'cart' %}>Cart</a></li>
+											<li><a href={% url 'checkout' %}>Checkout</a></li>
+											<li><a href={% url 'contact' %}>Contact</a></li>
 										</ul>
 									</li>
-									<li><a href={% url allproducts %}>Products</a></li>
-									<li><a href={% url contact %}>Contact</a></li>
+									<li><a href={% url 'allproducts' %}>Products</a></li>
+									<li><a href={% url 'contact' %}>Contact</a></li>
 									<li><a href="login-signup">Sign In</a></li>
 								</ul>
 							</nav>
@@ -126,15 +126,15 @@
 				</div>
 				<ul class="page_menu_nav menu_mm">
 					<li class="page_menu_item has-children menu_mm">
-						<a href={% url home %}>Home<i class="fa fa-angle-down"></i></a>
+						<a href={% url 'home' %}>Home<i class="fa fa-angle-down"></i></a>
 						<ul class="page_menu_selection menu_mm">
-							<li class="page_menu_item menu_mm"><a href={% url allproducts %}>Product<i class="fa fa-angle-down"></i></a></li>
-							<li class="page_menu_item menu_mm"><a href={% url cart %}>Cart<i class="fa fa-angle-down"></i></a></li>
-							<li class="page_menu_item menu_mm"><a href={% url contact %}>Contact<i class="fa fa-angle-down"></i></a></li>
+							<li class="page_menu_item menu_mm"><a href={% url 'allproducts' %}>Product<i class="fa fa-angle-down"></i></a></li>
+							<li class="page_menu_item menu_mm"><a href={% url 'cart' %}>Cart<i class="fa fa-angle-down"></i></a></li>
+							<li class="page_menu_item menu_mm"><a href={% url 'contact' %}>Contact<i class="fa fa-angle-down"></i></a></li>
 						</ul>
 					</li>
-					<li class="page_menu_item menu_mm"><a href={% url allproducts %}>Products<i class="fa fa-angle-down"></i></a></li>
-					<li class="page_menu_item menu_mm"><a href={% url contact %}>Contact<i class="fa fa-angle-down"></i></a></li>
+					<li class="page_menu_item menu_mm"><a href={% url 'allproducts' %}>Products<i class="fa fa-angle-down"></i></a></li>
+					<li class="page_menu_item menu_mm"><a href={% url 'contact' %}>Contact<i class="fa fa-angle-down"></i></a></li>
 				</ul>
 			</div>
 		</div>
@@ -317,7 +317,7 @@
 			<div class="row">
 				<div class="col">
 					<div class="footer_content d-flex flex-lg-row flex-column align-items-center justify-content-lg-start justify-content-center">
-						<div class="footer_logo"><a href="#">Creencia.</a></div>
+						<div class="footer_logo"><a href="#">Ecommerce-Site.</a></div>
 						<div class="footer_social ml-lg-auto">
 							<ul>
 								<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
