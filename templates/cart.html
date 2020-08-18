@@ -24,26 +24,26 @@
 				<div class="row">
 					<div class="col">
 						<div class="header_content d-flex flex-row align-items-center justify-content-start">
-							<div class="logo"><a href="#">Creencia.</a></div>
+							<div class="logo"><a href={% url 'home' %}>Creencia.</a></div>
 							<nav class="main_nav">
 								<ul>
 									<li class="hassubs active">
-										<a href="index.html">Creencia</a>
+										<a href={% url 'home' %}>Creencia</a>
 										<ul>
-											<li><a href="product.html">Product</a></li>
-											<li><a href="cart.html">Cart</a></li>
-											<li><a href="checkout.html">Checkout</a></li>
-											<li><a href="contact.html">Contact</a></li>
+											<li><a href={% url 'product' %}>Product</a></li>
+											<li><a href={% url 'cart' %}>Cart</a></li>
+											<li><a href={% url 'checkout' %}>Checkout</a></li>
+											<li><a href={% url 'contact' %}>Contact</a></li>
 										</ul>
 									</li>
-									<li><a href="product.html">Products</a></li>
+									<li><a href={% url 'product' %}>Products</a></li>
 									<li><a href="#">Offers</a></li>
-									<li><a href="contact.html">Contact</a></li>
+									<li><a href={% url 'contact' %}>Contact</a></li>
 								</ul>
 							</nav>
 							<div class="header_extra ml-auto">
 								<div class="shopping_cart">
-									<a href="cart.html">
+									<a href={% url 'cart' %}>
 										<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 												 viewBox="0 0 489 489" style="enable-background:new 0 0 489 489;" xml:space="preserve">
 											<g>
@@ -123,16 +123,16 @@
 				</div>
 				<ul class="page_menu_nav menu_mm">
 					<li class="page_menu_item has-children menu_mm">
-						<a href="index.html">Home<i class="fa fa-angle-down"></i></a>
+						<a href={% url 'home' %}>Home<i class="fa fa-angle-down"></i></a>
 						<ul class="page_menu_selection menu_mm">
-							<li class="page_menu_item menu_mm"><a href="product.html">Product<i class="fa fa-angle-down"></i></a></li>
-							<li class="page_menu_item menu_mm"><a href="cart.html">Cart<i class="fa fa-angle-down"></i></a></li>
-							<li class="page_menu_item menu_mm"><a href="contact.html">Contact<i class="fa fa-angle-down"></i></a></li>
+							<li class="page_menu_item menu_mm"><a href={% url 'products' %}>Product<i class="fa fa-angle-down"></i></a></li>
+							<li class="page_menu_item menu_mm"><a href={% url 'cart' %}>Cart<i class="fa fa-angle-down"></i></a></li>
+							<li class="page_menu_item menu_mm"><a href={% url 'contact' %}>Contact<i class="fa fa-angle-down"></i></a></li>
 						</ul>
 					</li>
-					<li class="page_menu_item menu_mm"><a href="product.html">Products<i class="fa fa-angle-down"></i></a></li>
+					<li class="page_menu_item menu_mm"><a href={% url 'products' %}>Products<i class="fa fa-angle-down"></i></a></li>
 					<li class="page_menu_item menu_mm"><a href="#">Offers<i class="fa fa-angle-down"></i></a></li>
-					<li class="page_menu_item menu_mm"><a href="contact.html">Contact<i class="fa fa-angle-down"></i></a></li>
+					<li class="page_menu_item menu_mm"><a href={% url 'contact' %}>Contact<i class="fa fa-angle-down"></i></a></li>
 				</ul>
 			</div>
 		</div>
@@ -159,7 +159,7 @@
 							<div class="home_content">
 								<div class="breadcrumbs">
 									<ul>
-										<li><a href="index.html">Home</a></li>
+										<li><a href={% url 'home' %}>Home</a></li>
 										<li>Shopping Cart</li>
 									</ul>
 								</div>
@@ -292,7 +292,7 @@
 								</li>
 							</ul>
 						</div>
-						<div class="button checkout_button"><a href="checkout.html">Proceed to checkout</a></div>
+						<div class="button checkout_button"><a href={% url 'checkout' %}>Proceed to checkout</a></div>
 					</div>
 				</div>
 			</div>

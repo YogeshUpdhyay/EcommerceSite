@@ -1,2 +1,2 @@
 # EcommerceSite
-Ecommerce site using Django and HTML
+Ecommerce site using Django.
