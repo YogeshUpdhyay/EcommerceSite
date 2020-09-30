@@ -158,7 +158,7 @@
 			<div class="owl-carousel owl-theme home_slider">
 				
 				<!-- Slider Item -->
-				{% for slider in slidercontent %}
+				{% for slider in sliders %}
 				<div class="owl-item home_slider_item">
 					<div class="home_slider_background" style="background-image:url({{slider.img.url}})"></div>
 					<div class="home_slider_content_container">
@@ -168,7 +168,7 @@
 									<div class="home_slider_content"  data-animation-in="fadeIn" data-animation-out="animate-out fadeOut">
 										<div class="home_slider_title">{{slider.name}}.</div>
 										<div class="home_slider_subtitle">{{slider.desc}}.</div>
-										<div class="button button_light home_button"><a href="#">Shop Now</a></div>
+										<div class="button button_light home_button"><a href={% url 'product' slider.name %}>Shop Now</a></div>
 									</div>
 								</div>
 							</div>
@@ -188,9 +188,8 @@
 							<div class="home_slider_dots">
 								<ul id="home_slider_custom_dots" class="home_slider_custom_dots">
 									<li class="home_slider_custom_dot active">01.</li>
-									{% for i in slidernumber %}
-									<li class="home_slider_custom_dot">0{{i}}.</li>
-									{% endfor %}
+									<li class="home_slider_custom_dot">02.</li>
+									<li class="home_slider_custom_dot">03.</li>
 								</ul>
 							</div>
 						</div>
@@ -206,20 +205,20 @@
 	<div class="avds">
 		<div class="avds_container d-flex flex-lg-row flex-column align-items-start justify-content-between">
 			<div class="avds_small">
-				<div class="avds_background" style="background-image:url({{featured.img.url}})"></div>
+				<div class="avds_background" style="background-image:url({{offer.img.url}})"></div>
 				<div class="avds_small_inner">
 					<div class="avds_discount_container">
 						<img src={% static 'images/discount.png'%} alt="">
 						<div>
 							<div class="avds_discount">
-								<div>{{offers.percent}}<span>%</span></div>
+								<div>{{offer.percent}}<span>%</span></div>
 								<div>Discount</div>
 							</div>
 						</div>
 					</div>
 					<div class="avds_small_content">
-						<div class="avds_title">{{offers.title}}</div>
-						<div class="avds_link"><a href="product.html">See More</a></div>
+						<div class="avds_title">{{offer.name}}</div>
+						<div class="avds_link"><a href={% url 'product' offer.name %}>See More</a></div>
 					</div>
 				</div>
 			</div>
@@ -227,9 +226,9 @@
 				<div class="avds_background" style="background-image:url({{featured.img.url}})"></div>
 				<div class="avds_large_container">
 					<div class="avds_large_content">
-						<div class="avds_title">{{featured.title}}</div>
+						<div class="avds_title">{{featured.name}}</div>
 						<div class="avds_text">{{featured.desc}}.</div>
-						<div class="avds_link avds_link_large"><a href="categories.html">See More</a></div>
+						<div class="avds_link avds_link_large"><a href={% url 'product' featured.name %}>See More</a></div>
 					</div>
 				</div>
 			</div>
@@ -255,11 +254,8 @@
 								<div class="product_price">&#8377;{{product.price}}</div>
 							</div>
 						</div>
-						{% endfor %}
-
-						
-					</div>
-						
+						{% endfor %}	
+					</div>		
 				</div>
 			</div>
 		</div>
@@ -317,7 +313,7 @@
 			<div class="row">
 				<div class="col">
 					<div class="footer_content d-flex flex-lg-row flex-column align-items-center justify-content-lg-start justify-content-center">
-						<div class="footer_logo"><a href="#">Ecommerce-Site.</a></div>
+						<div class="footer_logo"><a href="">Ecommerce-Site.</a></div>
 						<div class="footer_social ml-lg-auto">
 							<ul>
 								<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>

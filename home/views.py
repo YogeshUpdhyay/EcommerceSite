@@ -1,22 +1,24 @@
 from django.shortcuts import render,redirect
-from .models import Slider,Featured,Offers
-from products.models import Product
+from products.models import *
 # Create your views here.
 
 def index(request):
-    slidercontent = Slider.objects.all()
-    slidernumber = range(2,len(slidercontent)+1)
-    offers = Offers.objects.get()
-    featured = Featured.objects.get()
-    products = Product.objects.all()
+
+    # Featuring slider products
+    sliders = Product.objects.filter(slider=True).only('name', 'desc', 'img')[:3]
+    offer = Product.objects.filter(percent__gte=50).only('name', 'percent', 'img')[0]
+    featured = Product.objects.filter(featured=True).only('name', 'desc', 'img')[0]
+    products = Product.objects.all()[0:4]
+
+    # Rendering the content
     content = {
-        'slidercontent' : slidercontent, 
-        'slidernumber' : slidernumber, 
-        'offers' : offers, 
+        'sliders' : sliders,
+        'offer' : offer,
         'featured' : featured,
         'products' : products
     }
-    return render(request,'index.html',content)
+    
+    return render(request, 'index.html', content)
 
 def allproducts(request):
     products = Product.objects.all()
@@ -24,6 +26,7 @@ def allproducts(request):
         'products' : products
     }
     return render (request,'allproducts.html',content)
+
 def cart(request):
     return render(request,'cart.html')
 
